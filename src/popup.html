@@ -1,0 +1,130 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szczegółowy status</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css">
+    <script src="popup.js"></script>
+  </head>
+  <body style="padding: 20px; width: 450px;">
+    <div class="pure-g">
+      <div class="pure-u-1">
+        <h2>Samochody</h2>
+        <table class="pure-table pure-table-bordered">
+          <thead>
+            <tr>
+              <th>Samochód</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id='vehicles'>
+            <tr>
+              <td colspan="2">Pobieram dane...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="pure-u-1" style='padding-top: 20px'>
+        <h2>Statusy</h2>
+
+        <table class="pure-table pure-table-bordered">
+          <thead>
+            <tr>
+              <th>Etap</th>
+              <th>Status</th>
+              <th>Opis</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="pure-table-odd">
+              <td rowspan="2">Zamawianie</td>
+              <td>20</td>
+              <td>Przyjęcie zamówienia</td>
+            </tr>
+            <tr class="pure-table-odd">
+              <td>21</td>
+              <td>Przetworzenie zamówienia</td>
+            </tr>
+            <tr>
+              <td rowspan="3">Ustawianie produkcji</td>
+              <td>25</td>
+              <td>Ustawienie zamówienia do produkcji</td>
+            </tr>
+            <tr>
+              <td>30</td>
+              <td>Oczekiwanie na zwolnienie do produkcji</td>
+            </tr>
+            <tr>
+              <td>32</td>
+              <td>Zwolnienie do produkcji</td>
+            </tr>
+            <tr class="pure-table-odd">
+              <td rowspan="4">Produkcja</td>
+              <td>33</td>
+              <td>Przyjęcie do produkcji przez fabrykę</td>
+            </tr>
+            <tr class="pure-table-odd">
+              <td>35</td>
+              <td>Samochód na linii produkcyjnej</td>
+            </tr>
+            <tr class="pure-table-odd">
+              <td>38</td>
+              <td>Samochód wyprodukowany</td>
+            </tr>
+            <tr class="pure-table-odd">
+              <td>40</td>
+              <td>Samochód przekazany do sprzedazy</td>
+            </tr>
+            <tr>
+              <td rowspan="5">Transport</td>
+              <td>42</td>
+              <td>Samochód opuścił bramy fabryki</td>
+            </tr>
+            <tr>
+              <td>33</td>
+              <td>Samochód na centralnym składzie dystrybucyjnym</td>
+            </tr>
+            <tr>
+              <td>44</td>
+              <td>Samochód wysłany do Polski</td>
+            </tr>
+            <tr>
+              <td>48</td>
+              <td>Samochód na składzie w Polsce</td>
+            </tr>
+            <tr>
+              <td>49</td>
+              <td>Samochód wysłany do dealera</td>
+            </tr>
+            <tr class="pure-table-odd">
+              <td rowspan="2">Sprzedaz</td>
+              <td>58</td>
+              <td>Samochód dojechał do dealera</td>
+            </tr>
+            <tr class="pure-table-odd">
+              <td>60</td>
+              <td>Samochód sprzedany</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="pure-u-1" style='padding-top: 20px'>
+          <p>
+            by Goorsky
+            <br />
+            <a href='https://github.com/Goorsky/my-opel-detailed-status' target='new'>contribute on github</a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>
+
